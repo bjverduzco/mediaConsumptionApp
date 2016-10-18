@@ -2,10 +2,17 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 
+//route and model requires
+var index = require('./routes/index')
+
 var app = express();
 
+//configs
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+//routes
+app.use('/', index);
 
 app.use('/*', function(request, response, next){
   response.sendFile(path.join(__dirname, '..public/views/index.html'));
