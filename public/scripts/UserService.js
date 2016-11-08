@@ -9,6 +9,7 @@ angular.module('mediaApp').factory('UserService', ['$http', function($http){
       console.log('User Data', vm.userData.user);
     }, function(err){
       console.log('Error in UserService', err);
+      
     });
   };
 

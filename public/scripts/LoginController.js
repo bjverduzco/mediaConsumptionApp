@@ -4,17 +4,28 @@ angular.module('mediaApp').controller('LoginController', ['$http', '$location', 
   vm.username = '';
   vm.password = '';
 
-  vm login = function(){
+  vm.login = function(){
     var sendData = {};
 
     sendData.username = vm.username;
     sendData.password = vm.password;
 
-    $http.post('/login', sendData).then(function(response){
-        vm.userData.user = response.data;
-        console.log(vm.userData.user);
+    UserService.login(sendData).then(handleSuccess, handleFailure);
+  }
+
+  function handleSuccess(response){
+    console.log('Successfully Logged in');
+  }
+
+  function handleFailure(response){
+    console.log('Failure Logging in', response);
+  }
+
+  vm.register = function(){
+    $http.get('/register').then(function(response){
+      console.log('Success loading registration page', response);
     }, function(err){
-      console.log('Error in userservice', err);
-    })
+      console.log('Error loading registration page');
+    });
   }
 }]);
