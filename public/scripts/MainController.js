@@ -1,5 +1,5 @@
-angular.module('mediaApp').controller('MainController', ['$http', '$locator', function($http, $locator){
+angular.module('mediaApp').controller('MainController', ['$http', '$location', function($http, $location){
   var vm = this;
 
-  
+
 }]);

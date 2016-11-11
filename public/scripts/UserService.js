@@ -1,7 +1,7 @@
-angular.module('mediaApp').factory('UserService', ['$http', function($http){
+angular.module('mediaApp').factory('UserService', ['$http', function($http, UserService){
   var vm = this;
 
-  vmuserData = {};
+  vm.userData = {};
 
   function login(data){
     return $http.post('/login', data).then(function(response){
@@ -9,11 +9,11 @@ angular.module('mediaApp').factory('UserService', ['$http', function($http){
       console.log('User Data', vm.userData.user);
     }, function(err){
       console.log('Error in UserService', err);
-      
+
     });
   };
 
   return {
-    login: login;
-  }
+    login: login
+  };
 }]);

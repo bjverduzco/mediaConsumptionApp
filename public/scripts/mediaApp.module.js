@@ -1,1 +1,1 @@
-angular.module('mediaApp', []);
+angular.module('mediaApp', ['ngRoute']);

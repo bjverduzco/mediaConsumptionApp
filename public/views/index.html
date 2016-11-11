@@ -1,16 +1,26 @@
-<!DOCTYPE>
-<html>
-  <head ng-app="mediaApp">
+<!DOCTYPE html>
+<html ng-app="mediaApp">
+  <head>
     <meta charset="utf-8" />
     <title>Media Consumption App</title>
     <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <script src="scripts/mediaApp.module.js"></script>
+    <script src="scripts/mediaApp.config.js"></script>
+    <script src="scripts/MainController.js"></script>
+    <script src="scripts/LoginController.js"></script>
+    <script src="scripts/RegisterController.js"></script>
+
+    <script src="scripts/UserService.js"></script>
+
+    <base href="/" />
   </head>
   <body ng-controller="MainController as main">
     <h1>Media Consumption App</h1>
     {{2 + 2}}
 
     <div ng-view>
-
+      
     </div>
   </body>
 </html>
